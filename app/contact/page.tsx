@@ -23,9 +23,16 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("Form submitted:", formData)
+    const text = `New contact request:
+Name: ${formData.name}
+Email: ${formData.email}
+Scam Type: ${formData.caseType || "Not provided"}
+Message: ${formData.message}`
+
+    const url = `https://wa.me/61485841484?text=${encodeURIComponent(text)}`
+    window.open(url, "_blank", "noopener,noreferrer")
+
     setFormData({ name: "", email: "", caseType: "", message: "" })
-    alert("Message sent! We'll get back to you soon.")
   }
 
   const contactInfo = [
@@ -44,7 +51,7 @@ export default function Contact() {
     {
       icon: MapPin,
       label: "Support Hours",
-      value: "Monday - Friday, 9 AM - 6 PM",
+      value: "Monday - Saturday, 9 AM - 6 PM",
       link: "#",
     },
   ]
@@ -162,15 +169,15 @@ export default function Contact() {
                     ></textarea>
                   </div>
 
-                  <Button
-                    type="submit"
-                    className="w-full bg-gradient-to-r from-primary to-accent text-background font-semibold  rounded-full py-3  hover:shadow-lg"
-                  >
-                    <Send className="w-4 h-4" />
-                    Send Message
-                  </Button>
-                </form>
-              </div>
+                <Button
+                  type="submit"
+                  className="w-full bg-gradient-to-r from-primary to-accent text-background font-semibold  rounded-full py-3  hover:shadow-lg"
+                >
+                  <Send className="w-4 h-4" />
+                  Send via WhatsApp
+                </Button>
+              </form>
+            </div>
             </ScrollReveal>
           </div>
         </section>
