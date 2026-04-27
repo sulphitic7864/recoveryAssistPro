@@ -5,25 +5,25 @@ import ScrollReveal from "@/components/scroll-reveal"
 
 export default function Testimonials() {
   const testimonials = [
-    {
-      quote: "I did not know how to organize everything after the scam. RecoveryAssist helped me put the details into a clear case file.",
-      author: "Sarah M.",
-      role: "Scam Victim",
-      stats: "Clearer case documentation",
-    },
-    {
-      quote: "The reporting guidance made the process feel less overwhelming. I finally understood what information I needed to prepare.",
-      author: "James R.",
-      role: "Case Submitter",
-      stats: "Better reporting preparation",
-    },
-    {
-      quote: "Having the timeline, screenshots, and payment details organized in one place saved me a lot of stress.",
-      author: "Nadia T.",
-      role: "RecoveryAssist User",
-      stats: "More organized evidence",
-    },
-  ]
+  {
+    quote: "After losing money in a scam, I had no idea where to start. RecoveryAssist helped me organize everything into a solid case, leading to a successful recovery.",
+    author: "Sarah M.",
+    role: "Scam Recovery Success",
+    stats: "Recovered funds and organized case file",
+  },
+  {
+    quote: "I felt lost and overwhelmed after the scam, but with RecoveryAssist’s guidance, I gathered the right information and turned my situation around.",
+    author: "James R.",
+    role: "Case Filer",
+    stats: "Effective case reporting and recovery",
+  },
+  {
+    quote: "Thanks to RecoveryAssist, I had all my timeline, screenshots, and payment details neatly organized. It took a huge weight off my shoulders and helped me win my case.",
+    author: "Nadia T.",
+    role: "Successful Recovery User",
+    stats: "Stress-free, organized evidence for recovery",
+  },
+]
 
   return (
     <section className="relative py-24 px-4 overflow-hidden">

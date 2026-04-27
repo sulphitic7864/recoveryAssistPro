@@ -28,8 +28,7 @@ export default function Hero() {
               </h1>
              
               <p className="text-xl text-muted-foreground leading-relaxed animate-hero-fade-up animation-delay-300">
-                RecoveryAssist helps you document your case, understand your next steps,
-                and organize the information needed for reporting and follow-up.
+                RecoveryAssist guides you through documenting your case, clarifies what steps to take next, and helps you organize all the necessary information for reporting and follow-ups—so the right authorities can handle your case effectively and efficiently.
               </p>
             </div>
 

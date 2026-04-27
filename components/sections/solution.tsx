@@ -17,12 +17,12 @@ export default function Solution() {
     },
     {
       title: "Organized Documentation",
-      description: "Keep screenshots, payment details, messages, and notes together in one place instead of scattered across devices.",
+      description: "Consolidate all your important files—such as screenshots, payment receipts, messages, and notes—into one easily accessible location. This helps prevent losing crucial information across different devices, ensuring everything is neatly organized and easy to find when needed.",
       icon: FileText,
     },
     {
-      title: "Next-Step Visibility",
-      description: "See what to prepare next and keep your case information ready for future updates and actions.",
+      title: "Next-Step Legal Support",
+      description: "We connect you with the relevant offices and authorities responsible for investigating online fraud. Our team also assists with follow-ups to help ensure your case is handled efficiently and taken seriously every step of the way.",
       icon: BarChart3,
     },
   ]
