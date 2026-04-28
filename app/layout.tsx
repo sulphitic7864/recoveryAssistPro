@@ -1,6 +1,7 @@
 import type React from "react"
 import type { Metadata, Viewport } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
+import Script from "next/script"   // 👈 ADD THIS
 
 import Navbar from "@/components/navbar"
 import DownloadButton from "@/components/sections/download"
@@ -14,10 +15,6 @@ export const metadata: Metadata = {
   description:
     "RecoveryAssist helps users organize scam case details, prepare documentation, and understand the next steps for reporting and follow-up.",
   icons: {
-    // icon: [
-    //   { url: "./favicon-16x16.png", sizes: "16x16", type: "image/png" },
-    //   { url: "./favicon-32x32.png", sizes: "32x32", type: "image/png" },
-    // ],
     apple: "./apple-touch-icon.png",
   },
   manifest: "./site.webmanifest",
@@ -36,6 +33,21 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className="font-sans antialiased">
+
+        {/* ✅ Google Ads Script */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18125078694"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-gtag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18125078694');
+          `}
+        </Script>
+
         <Navbar />
         {children}
         <DownloadButton />
