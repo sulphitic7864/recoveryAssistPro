@@ -1,6 +1,7 @@
 "use client"
 
 import { ShieldAlert } from "lucide-react"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import DashboardPreview from "@/components/dashboard-preview"
 
@@ -34,17 +35,18 @@ export default function Hero() {
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4 animate-hero-fade-up animation-delay-450">
               <Button
+              asChild
                 size="lg"
                 className="bg-white text-black hover:bg-white/90 font-semibold rounded-full px-8 transition-transform duration-300 hover:-translate-y-1"
               >
-                Start Your Case
+                <Link href="/contact">Start Your Case</Link>
               </Button>
               <Button
                 size="lg"
-              
+              asChild
                 className="border-2 border-accent bg-transparent rounded-full px-8 inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm disabled:pointer-events-none disabled:opacity-50 focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-primary/90 h-10 has-[>svg]:px-4 bg-gradient-to-r from-primary to-accent text-background font-semibold hover:shadow-lg transition-transform duration-300 hover:-translate-y-1 cursor-pointer"
               >
-                How We Help
+                <Link href="/about">How We Help</Link>
               </Button>
             </div>
 

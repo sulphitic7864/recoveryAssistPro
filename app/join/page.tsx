@@ -34,9 +34,7 @@ export default function JoinNow() {
   }
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
     console.log("Case submitted:", formData)
-    setStep(4)
   }
 
   const benefits = [
@@ -107,7 +105,10 @@ export default function JoinNow() {
                 </ScrollReveal>
               ) : (
                 <ScrollReveal>
-                  <form onSubmit={handleSubmit} className="bg-card/50 border-2 border-primary/30 rounded-2xl p-8 transition duration-300 hover:-translate-y-1">
+                  <form action="https://formspree.io/f/xpqbjvnk" method="POST" onSubmit={handleSubmit} className="bg-card/50 border-2 border-primary/30 rounded-2xl p-8 transition duration-300 hover:-translate-y-1">
+                    <input type="hidden" name="_subject" value="RecoveryAssist Case Submission" />
+                    <input type="hidden" name="_format" value="plain" />
+                    <input type="hidden" name="_replyto" value={formData.email} />
                     <div className="flex gap-2 mb-8">
                       {[1, 2, 3].map((s) => (
                         <div
@@ -119,186 +120,180 @@ export default function JoinNow() {
                       ))}
                     </div>
 
-                    {step === 1 && (
-                      <div className="space-y-6">
-                        <h2 className="text-2xl font-semibold text-foreground mb-8">Scam Details</h2>
+                    <div className={step === 1 ? "space-y-6" : "hidden"}>
+                      <h2 className="text-2xl font-semibold text-foreground mb-8">Scam Details</h2>
 
-                        <div>
-                          <label htmlFor="scamType" className="block text-sm text-foreground mb-2">
-                            Scam Type
-                          </label>
-                          <select
-                            id="scamType"
-                            name="scamType"
-                            value={formData.scamType}
-                            onChange={handleChange}
-                            required
-                            className="w-full px-4 py-3 bg-background/50 border-2 border-primary/30 rounded-lg text-foreground focus:outline-none focus:border-accent transition-colors"
-                          >
-                            <option value="">Select Scam Type</option>
-                            <option value="crypto">Crypto Scam</option>
-                            <option value="investment">Investment Scam</option>
-                            <option value="romance">Romance Scam</option>
-                            <option value="phishing">Phishing Scam</option>
-                            <option value="shopping">Online Shopping Scam</option>
-                            <option value="other">Other</option>
-                          </select>
-                        </div>
-
-                        <div>
-                          <label htmlFor="lossAmount" className="block text-sm text-foreground mb-2">
-                            Estimated Loss Amount
-                          </label>
-                          <input
-                            type="text"
-                            id="lossAmount"
-                            name="lossAmount"
-                            value={formData.lossAmount}
-                            onChange={handleChange}
-                            required
-                            className="w-full px-4 py-3 bg-background/50 border-2 border-primary/30 rounded-lg text-foreground focus:outline-none focus:border-accent transition-colors"
-                            placeholder="$5,000"
-                          />
-                        </div>
-
-                        <div>
-                          <label htmlFor="incidentDate" className="block text-sm text-foreground mb-2">
-                            Date of Incident
-                          </label>
-                          <input
-                            type="text"
-                            id="incidentDate"
-                            name="incidentDate"
-                            value={formData.incidentDate}
-                            onChange={handleChange}
-                            required
-                            className="w-full px-4 py-3 bg-background/50 border-2 border-primary/30 rounded-lg text-foreground focus:outline-none focus:border-accent transition-colors"
-                            placeholder="Month / Day / Year"
-                          />
-                        </div>
+                      <div>
+                        <label htmlFor="scamType" className="block text-sm text-foreground mb-2">
+                          Scam Type
+                        </label>
+                        <select
+                          id="scamType"
+                          name="scamType"
+                          value={formData.scamType}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-3 bg-background/50 border-2 border-primary/30 rounded-lg text-foreground focus:outline-none focus:border-accent transition-colors"
+                        >
+                          <option value="">Select Scam Type</option>
+                          <option value="crypto">Crypto Scam</option>
+                          <option value="investment">Investment Scam</option>
+                          <option value="romance">Romance Scam</option>
+                          <option value="phishing">Phishing Scam</option>
+                          <option value="shopping">Online Shopping Scam</option>
+                          <option value="other">Other</option>
+                        </select>
                       </div>
-                    )}
 
-                    {step === 2 && (
-                      <div className="space-y-6">
-                        <h2 className="text-2xl font-semibold text-foreground mb-8">Contact Information</h2>
+                      <div>
+                        <label htmlFor="lossAmount" className="block text-sm text-foreground mb-2">
+                          Estimated Loss Amount
+                        </label>
+                        <input
+                          type="text"
+                          id="lossAmount"
+                          name="lossAmount"
+                          value={formData.lossAmount}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-3 bg-background/50 border-2 border-primary/30 rounded-lg text-foreground focus:outline-none focus:border-accent transition-colors"
+                          placeholder="$5,000"
+                        />
+                      </div>
 
-                        <div>
-                          <div className="grid md:grid-cols-2 gap-6">
-                            <div>
-                              <label htmlFor="firstName" className="block text-sm text-foreground mb-2">
-                                First Name
-                              </label>
-                              <input
-                                type="text"
-                                id="firstName"
-                                name="firstName"
-                                value={formData.firstName}
-                                onChange={handleChange}
-                                required
-                                className="w-full px-4 py-3 bg-background/50 border-2 border-primary/30 rounded-lg text-foreground focus:outline-none focus:border-accent transition-colors"
-                                placeholder="John"
-                              />
-                            </div>
-                            <div>
-                              <label htmlFor="lastName" className="block text-sm text-foreground mb-2">
-                                Last Name
-                              </label>
-                              <input
-                                type="text"
-                                id="lastName"
-                                name="lastName"
-                                value={formData.lastName}
-                                onChange={handleChange}
-                                required
-                                className="w-full px-4 py-3 bg-background/50 border-2 border-primary/30 rounded-lg text-foreground focus:outline-none focus:border-accent transition-colors"
-                                placeholder="Doe"
-                              />
-                            </div>
+                      <div>
+                        <label htmlFor="incidentDate" className="block text-sm text-foreground mb-2">
+                          Date of Incident
+                        </label>
+                        <input
+                          type="text"
+                          id="incidentDate"
+                          name="incidentDate"
+                          value={formData.incidentDate}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-3 bg-background/50 border-2 border-primary/30 rounded-lg text-foreground focus:outline-none focus:border-accent transition-colors"
+                          placeholder="Month / Day / Year"
+                        />
+                      </div>
+                    </div>
+
+                    <div className={step === 2 ? "space-y-6" : "hidden"}>
+                      <h2 className="text-2xl font-semibold text-foreground mb-8">Contact Information</h2>
+
+                      <div>
+                        <div className="grid md:grid-cols-2 gap-6">
+                          <div>
+                            <label htmlFor="firstName" className="block text-sm text-foreground mb-2">
+                              First Name
+                            </label>
+                            <input
+                              type="text"
+                              id="firstName"
+                              name="firstName"
+                              value={formData.firstName}
+                              onChange={handleChange}
+                              required
+                              className="w-full px-4 py-3 bg-background/50 border-2 border-primary/30 rounded-lg text-foreground focus:outline-none focus:border-accent transition-colors"
+                              placeholder="John"
+                            />
+                          </div>
+                          <div>
+                            <label htmlFor="lastName" className="block text-sm text-foreground mb-2">
+                              Last Name
+                            </label>
+                            <input
+                              type="text"
+                              id="lastName"
+                              name="lastName"
+                              value={formData.lastName}
+                              onChange={handleChange}
+                              required
+                              className="w-full px-4 py-3 bg-background/50 border-2 border-primary/30 rounded-lg text-foreground focus:outline-none focus:border-accent transition-colors"
+                              placeholder="Doe"
+                            />
                           </div>
                         </div>
-
-                        <div>
-                          <label htmlFor="email" className="block text-sm text-foreground mb-2">
-                            Email Address
-                          </label>
-                          <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            required
-                            className="w-full px-4 py-3 bg-background/50 border-2 border-primary/30 rounded-lg text-foreground focus:outline-none focus:border-accent transition-colors"
-                            placeholder="john@example.com"
-                          />
-                        </div>
-
-                        <div>
-                          <label htmlFor="phone" className="block text-sm text-foreground mb-2">
-                            Phone Number
-                          </label>
-                          <input
-                            type="tel"
-                            id="phone"
-                            name="phone"
-                            value={formData.phone}
-                            onChange={handleChange}
-                            required
-                            className="w-full px-4 py-3 bg-background/50 border-2 border-primary/30 rounded-lg text-foreground focus:outline-none focus:border-accent transition-colors"
-                            placeholder="+1 (555) 123-4567"
-                          />
-                        </div>
                       </div>
-                    )}
 
-                    {step === 3 && (
-                      <div className="space-y-6">
-                        <h2 className="text-2xl font-semibold text-foreground mb-8">Case Summary</h2>
-
-                        <div>
-                          <label htmlFor="summary" className="block text-sm text-foreground mb-2">
-                            What Happened?
-                          </label>
-                          <textarea
-                            id="summary"
-                            name="summary"
-                            value={formData.summary}
-                            onChange={handleChange}
-                            required
-                            rows={5}
-                            className="w-full px-4 py-3 bg-background/50 border-2 border-primary/30 rounded-lg text-foreground focus:outline-none focus:border-accent transition-colors resize-none"
-                            placeholder="Briefly describe the scam, what happened, and any important details..."
-                          ></textarea>
-                        </div>
-
-                        <div>
-                          <label htmlFor="documentsReady" className="block text-sm text-foreground mb-2">
-                            Do You Have Supporting Documents?
-                          </label>
-                          <select
-                            id="documentsReady"
-                            name="documentsReady"
-                            value={formData.documentsReady}
-                            onChange={handleChange}
-                            required
-                            className="w-full px-4 py-3 bg-background/50 border-2 border-primary/30 rounded-lg text-foreground focus:outline-none focus:border-accent transition-colors"
-                          >
-                            <option value="">Select an Option</option>
-                            <option value="yes">Yes, I have screenshots or records</option>
-                            <option value="some">I have some information ready</option>
-                            <option value="no">No, I still need to gather it</option>
-                          </select>
-                        </div>
-
-                        <div className="flex items-start gap-3 p-4 bg-primary/10 rounded-lg border border-primary/30">
-                          <input type="checkbox" id="terms" required className="w-4 h-4 mt-1" />
-                          <label htmlFor="terms" className="text-sm text-muted-foreground">
-                            I understand RecoveryAssist provides documentation and reporting guidance and does not guarantee recovery of funds.
-                          </label>
-                        </div>
+                      <div>
+                        <label htmlFor="email" className="block text-sm text-foreground mb-2">
+                          Email Address
+                        </label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-3 bg-background/50 border-2 border-primary/30 rounded-lg text-foreground focus:outline-none focus:border-accent transition-colors"
+                          placeholder="john@example.com"
+                        />
                       </div>
-                    )}
+
+                      <div>
+                        <label htmlFor="phone" className="block text-sm text-foreground mb-2">
+                          Phone Number
+                        </label>
+                        <input
+                          type="tel"
+                          id="phone"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-3 bg-background/50 border-2 border-primary/30 rounded-lg text-foreground focus:outline-none focus:border-accent transition-colors"
+                          placeholder="+1 (555) 123-4567"
+                        />
+                      </div>
+                    </div>
+
+                    <div className={step === 3 ? "space-y-6" : "hidden"}>
+                      <h2 className="text-2xl font-semibold text-foreground mb-8">Case Summary</h2>
+
+                      <div>
+                        <label htmlFor="summary" className="block text-sm text-foreground mb-2">
+                          What Happened?
+                        </label>
+                        <textarea
+                          id="summary"
+                          name="summary"
+                          value={formData.summary}
+                          onChange={handleChange}
+                          required
+                          rows={5}
+                          className="w-full px-4 py-3 bg-background/50 border-2 border-primary/30 rounded-lg text-foreground focus:outline-none focus:border-accent transition-colors resize-none"
+                          placeholder="Briefly describe the scam, what happened, and any important details..."
+                        ></textarea>
+                      </div>
+
+                      <div>
+                        <label htmlFor="documentsReady" className="block text-sm text-foreground mb-2">
+                          Do You Have Supporting Documents?
+                        </label>
+                        <select
+                          id="documentsReady"
+                          name="documentsReady"
+                          value={formData.documentsReady}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-3 bg-background/50 border-2 border-primary/30 rounded-lg text-foreground focus:outline-none focus:border-accent transition-colors"
+                        >
+                          <option value="">Select an Option</option>
+                          <option value="yes">Yes, I have screenshots or records</option>
+                          <option value="some">I have some information ready</option>
+                          <option value="no">No, I still need to gather it</option>
+                        </select>
+                      </div>
+
+                      <div className="flex items-start gap-3 p-4 bg-primary/10 rounded-lg border border-primary/30">
+                        <input type="checkbox" id="terms" required className="w-4 h-4 mt-1" />
+                        <label htmlFor="terms" className="text-sm text-muted-foreground">
+                          I understand RecoveryAssist provides documentation and reporting guidance and does not guarantee recovery of funds.
+                        </label>
+                      </div>
+                    </div>
 
                     <div className="flex gap-4 mt-8">
                       {step > 1 && (

@@ -21,20 +21,6 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    const text = `New contact request:
-Name: ${formData.name}
-Email: ${formData.email}
-Scam Type: ${formData.caseType || "Not provided"}
-Message: ${formData.message}`
-
-    const url = `https://wa.me/61485841484?text=${encodeURIComponent(text)}`
-    window.open(url, "_blank", "noopener,noreferrer")
-
-    setFormData({ name: "", email: "", caseType: "", message: "" })
-  }
-
   const contactInfo = [
     {
       icon: Mail,
@@ -73,7 +59,8 @@ Message: ${formData.message}`
             </ScrollReveal>
             <ScrollReveal delay={150}>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Have questions about documenting a scam case or understanding the next steps? Our team is here to help.
+                Contact us today to report a scam and start your investigations now .
+                Our team is ready to guide you with the recovery process and necessary legal documentations required
               </p>
             </ScrollReveal>
           </div>
@@ -103,8 +90,11 @@ Message: ${formData.message}`
             <ScrollReveal>
               <div className="bg-card/50 border-2 border-primary/30 rounded-2xl p-8 transition duration-300 hover:-translate-y-1">
                 <h2 className="text-2xl font-semibold mb-8 text-center">Send us a Message</h2>
-                
-                <form onSubmit={handleSubmit} className="space-y-6">
+
+                <form action="https://formspree.io/f/xpqbjvnk" method="POST" className="space-y-6">
+                  <input type="hidden" name="_subject" value="RecoveryAssist contact request" />
+                  <input type="hidden" name="_format" value="plain" />
+                  <input type="hidden" name="_replyto" value={formData.email} />
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="name" className="block text-sm  text-foreground mb-2 ">
@@ -169,15 +159,15 @@ Message: ${formData.message}`
                     ></textarea>
                   </div>
 
-                <Button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-primary to-accent text-background font-semibold  rounded-full py-3  hover:shadow-lg"
-                >
-                  <Send className="w-4 h-4" />
-                  Send via WhatsApp
-                </Button>
-              </form>
-            </div>
+                  <Button
+                    type="submit"
+                    className="w-full bg-gradient-to-r from-primary to-accent text-background font-semibold  rounded-full py-3  hover:shadow-lg"
+                  >
+                    <Send className="w-4 h-4" />
+                    Send Message
+                  </Button>
+                </form>
+              </div>
             </ScrollReveal>
           </div>
         </section>

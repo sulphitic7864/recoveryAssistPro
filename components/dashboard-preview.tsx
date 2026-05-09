@@ -33,11 +33,11 @@ export default function DashboardPreview() {
           {/* Case Status Cards */}
           <div className="grid grid-cols-2 gap-3">
             <div className="p-3 rounded-lg bg-background/50 border border-primary/20 hover:border-primary/40 transition">
-              <p className="text-xs text-slate-400 mb-1">Cases Documented</p>
+              <p className="text-xs text-slate-400 mb-1">Cases Reported</p>
               <p className="text-2xl font-bold text-primary">128</p>
             </div>
             <div className="p-3 rounded-lg bg-background/50 border border-accent/20 hover:border-accent/40 transition">
-              <p className="text-xs text-slate-400 mb-1">Reports Prepared</p>
+              <p className="text-xs text-slate-400 mb-1">Recovered Funds</p>
               <p className="text-2xl font-bold text-accent">342</p>
             </div>
           </div>

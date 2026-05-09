@@ -16,7 +16,7 @@ export default function Problem() {
     },
     {
       stat: "Reporting feels confusing and overwhelming",
-      description: "Without structured guidance, many people struggle to prepare a clear report and understand their next steps.",
+      description: "Who to report your case to is just is very vital in the recovery process , if you stand a chance to recover the lost funds . Talk to a team of specialized agents with proven track records . ",
       icon: Zap,
     },
   ]

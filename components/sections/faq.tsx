@@ -16,22 +16,22 @@ export default function FAQ() {
     {
       question: "Who is RecoveryAssist for?",
       answer:
-        "It is for people who have experienced a scam and need help gathering information, organizing evidence, and preparing a clearer case summary.",
+        "We assist scam victims in gathering and organizing evidence, compiling case documentation, and guiding them in reporting their cases to the appropriate authorities for prompt action and support.",
     },
     {
       question: "Can you recover my funds?",
       answer:
-        "No. We do not guarantee recovery of funds. Our role is to help you document your case and understand reporting-related next steps.",
+        " While we cannot guarantee a 100% recovery of lost funds, we are committed to maximizing your chances of recovery by helping organize your case, compiling critical evidence, and connecting you with the appropriate authorities to ensure prompt action is taken.",
     },
     {
       question: "What do you provide?",
       answer:
-        "We provide guidance for organizing scam details, creating structured documentation, and preparing information that may help with reporting and follow-up.",
+        "We provide recovery guidance, assistance with legal documentation, and direct support in connecting clients with the appropriate authorities to help ensure their cases are properly reviewed and investigated.",
     },
     {
       question: "How does RecoveryAssist help with reporting?",
       answer:
-        "RecoveryAssist helps you put your timeline, screenshots, payment details, and notes into a clearer structure so reporting feels less confusing and more manageable.",
+        "RecoveryAssistPro helps clients report cases to the appropriate legal authorities, monitors case progress, and follows up to help ensure timely action and proper handling of each case.",
     },
   ]
 

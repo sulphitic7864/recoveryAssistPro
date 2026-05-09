@@ -1,8 +1,10 @@
 "use client"
 
+import Link from "next/link"
 import { FileText, Search, Users, ShieldAlert } from "lucide-react"
 import Footer from "@/components/sections/footer"
 import ScrollReveal from "@/components/scroll-reveal"
+import { Button } from "@/components/ui/button"
 
 export default function About() {
   const stats = [
@@ -26,12 +28,12 @@ export default function About() {
     {
       icon: Search,
       title: "Structured Guidance",
-      description: "Our goal is to make documentation, timelines, and reporting steps feel more manageable.",
+      description: "Our goal is to help ensure that scammers are held accountable for their actions while maximizing the chances of recovering funds lost by victims. We also assist clients in strengthening their online security and protecting their personal information to help prevent future scams and unauthorized access.",
     },
     {
       icon: ShieldAlert,
       title: "Honest Support",
-      description: "We do not guarantee recovery of funds. We help users prepare their case and understand next steps.",
+      description: "We do not guarantee refunds or full recovery of lost funds. However, we assist clients by connecting them with experienced professionals and the appropriate authorities who specialize in handling recovery-related cases, helping maximize the chances of a successful outcome.",
     },
   ]
 
@@ -53,7 +55,7 @@ export default function About() {
             </ScrollReveal>
             <ScrollReveal delay={150}>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                RecoveryAssist helps people organize scam case details, prepare documentation, and better understand reporting-related next steps.
+                RecoveryAssist helps scam victims report fraudulent activity, organize and document supporting evidence, and connect with the appropriate authorities responsible for investigating, tracking, and tracing lost funds.
               </p>
             </ScrollReveal>
           </div>
@@ -65,7 +67,7 @@ export default function About() {
             </ScrollReveal>
             <ScrollReveal delay={150}>
               <p className="text-lg text-foreground leading-relaxed">
-                Our mission is to give scam victims a clearer way to document what happened, organize the evidence they have, and move forward with practical guidance. We believe people facing a stressful loss should not also have to struggle with confusion, scattered information, and unclear reporting steps.
+                Our mission is to support scam victims by providing guidance, gathering relevant evidence, and helping build strong, well-documented cases for recovery. We are committed to following each case closely and ensuring continuous support throughout the entire process.
               </p>
             </ScrollReveal>
           </div>
@@ -107,6 +109,15 @@ export default function About() {
             })}
           </div>
         </section>
+        <div className="mx-auto text-center">
+          <Button
+            asChild
+            size="lg"
+            className="border-2 border-accent mx-auto bg-transparent rounded-full px-8 inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm disabled:pointer-events-none disabled:opacity-50 focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-primary/90 h-10 has-[>svg]:px-4 bg-gradient-to-r from-primary to-accent text-background font-semibold hover:shadow-lg transition-transform duration-300 hover:-translate-y-1 cursor-pointer"
+          >
+            <Link href="/contact">Report Scam Today</Link>
+          </Button>
+        </div>
       </div>
 
       <Footer />

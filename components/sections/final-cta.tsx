@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { ShieldAlert } from "lucide-react"
+import Link from "next/link"
 
 export default function FinalCTA() {
   return (
@@ -26,16 +27,18 @@ export default function FinalCTA() {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <Button
+            asChild
               size="lg"
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold "
             >
-              Start Your Case
+              <Link href="/contact">Start Your Case</Link>
             </Button>
             <Button
+            asChild
               size="lg"
               className="border border-white hover:bg-white hover:text-primary-foreground  text-foreground bg-transparent cursor-pointer"
             >
-              Learn How It Works
+              <Link href="/about">Learn How It Works</Link>
             </Button>
           </div>
 

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import Footer from "@/components/sections/footer"
 import ScrollReveal from "@/components/scroll-reveal"
 import Testimonials from "@/components/sections/testimonials"
+import Link from "next/link"
 
 export default function Services() {
   return (
@@ -39,7 +40,7 @@ export default function Services() {
                 RecoveryAssist helps you document what happened and prepare your information with more clarity.
               </p>
               <Button className="bg-gradient-to-r from-primary to-accent text-background font-semibold rounded-full px-8">
-                Start Your Case
+                <Link href="/contact">Start Your Case</Link>
               </Button>
             </div>
           </ScrollReveal>

@@ -6,20 +6,20 @@ import ScrollReveal from "@/components/scroll-reveal"
 export default function Testimonials() {
   const testimonials = [
   {
-    quote: "After losing money in a scam, I had no idea where to start. RecoveryAssist helped me organize everything into a solid case, leading to a successful recovery.",
-    author: "Sarah M.",
+    quote: "After falling victim to a crypto investment scam, I honestly thought my funds were gone forever. The recovery team helped me organize all my transaction records, wallet details, and communication evidence before connecting me with the appropriate authorities. While no guarantees were made, they helped me recover a significant portion of my lost crypto and guided me through every step professionally. They also helped secure my online accounts and showed me how to protect my personal information from future attacks.",
+    author: "Michael R. – Sydney, Australia",
     role: "Scam Recovery Success",
     stats: "Recovered funds and organized case file",
   },
   {
-    quote: "I felt lost and overwhelmed after the scam, but with RecoveryAssist’s guidance, I gathered the right information and turned my situation around.",
-    author: "James R.",
+    quote: "I was extremely stressed after losing money to an online trading scam, but the customer support team was incredibly patient and understanding throughout the entire process. They answered all my questions clearly, kept me updated regularly, and never made unrealistic promises. What impressed me most was how seriously they treated my case and how much effort they put into helping me secure my email, banking, and crypto exchange accounts to prevent further fraud attempts.",
+    author: "Sandra K. – Toronto, Canada",
     role: "Case Filer",
     stats: "Effective case reporting and recovery",
   },
   {
-    quote: "Thanks to RecoveryAssist, I had all my timeline, screenshots, and payment details neatly organized. It took a huge weight off my shoulders and helped me win my case.",
-    author: "Nadia T.",
+    quote: "I contacted the recovery agency after being targeted by a fraudulent crypto platform that disappeared with my funds. Their team helped me compile strong evidence, file reports with the relevant authorities, and properly document my case. They were professional, responsive, and very knowledgeable about online scams. In addition to helping with the recovery process, they also assisted me in strengthening my online security by securing compromised accounts and teaching me how to avoid future scams.",
+    author: "David M. – London, United Kingdom",
     role: "Successful Recovery User",
     stats: "Stress-free, organized evidence for recovery",
   },
@@ -42,10 +42,10 @@ export default function Testimonials() {
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-6 items-stretch">
           {testimonials.map((testimonial, index) => (
             <ScrollReveal key={index} delay={index * 150}>
-              <div className="p-8 rounded-xl glassmorphism glow-border hover:neon-glow transition duration-300 hover:-translate-y-2">
+              <div className="flex flex-col h-full p-8 rounded-xl glassmorphism glow-border hover:neon-glow transition duration-300 hover:-translate-y-2">
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 fill-primary text-primary" />

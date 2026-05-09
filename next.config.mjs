@@ -10,6 +10,7 @@ const nextConfig = {
     unoptimized: true,
   },
   output: 'export', // Enable static export
+  trailingSlash: true,
 };
 
 export default nextConfig;
